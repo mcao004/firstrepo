@@ -2,11 +2,15 @@
 #define __CONTAINER_HH__
 
 #include "Base.h"
-#include "Sort.h"
+class Sort;
+#include <exception>
+#include <iostream>
+
+using namespace std;
 
 class Container {
 	protected:
-		Sort* sort_function:
+		Sort* sort_function;
 
 	public:
 		/* Constructors*/
@@ -14,7 +18,10 @@ class Container {
 		Container(Sort* function) : sort_function(function) {};
 
 		/* Non Virtual Functions */
-		void set_sort_function(Sort* sort_function); // set the type of the sorting algorithm
+		void set_sort_function(Sort* sort_function) {
+			this->sort_function = sort_function;
+		}
+		// set the type of the sorting algorithm
 
 		/* Pure Virtual Functions */
 		// push the top pointer ofthe tree into container

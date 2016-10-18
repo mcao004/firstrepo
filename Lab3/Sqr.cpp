@@ -1,14 +1,10 @@
-#ifndef __SQR_HH__
-#define __SQR_HH__
 
-#include "Base.h"
-#include <cmath>
+#include "Sqr.h"
 
-class Sqr : public Base {
-	protected:
-		Base* a;
-	public:
-		Sqr(Base* x) : a(x) {};
-		double evaluate() { return sqrt(*a); };
-};
-#endif
+Sqr::Sqr(Base* x)
+: a(x)
+{}
+
+double Sqr::evaluate() {
+	return (a->evaluate() * a->evaluate());
+}
